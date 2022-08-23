@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>login</title>
+
+    <style>
+        div{
+            background: #864CBF;
+        }
+        :root{
+            --color-fondo: #864CBF ;
+            --boton-ingresar: #66BF39;
+            --boton-registrar: #46178F;
+            --caja-contraseña-y-correo: #D9D9D9;
+            --texto1: #FFFFFF;
+            --texto2: #000000;
+            --sm: 14px;
+            --md:16px;
+            --lg: 18px;
+
+        }
+        body{
+            font-family: 'Fredoka', sans-serif;
+            margin: 0;
+        }
+        .login{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .form-container{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+        .logo{
+            width: 150px;
+            margin-bottom: 48px;
+            justify-self: center;
+            /*display: none;*/
+        }
+        .title{
+            font-size: var(--lg);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .subtitle{
+            color:var();
+            font-size: var(--md);
+            font-weight: 300px;
+            margin-top: 0;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+        }
+        .label{
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .input{
+            background-color: var(--caja-contraseña-y-correo);
+            border: none;
+            border-radius: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            margin-bottom: 12px;
+
+        }
+        .login-button {
+            border: none;
+            border-radius: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            cursor: pointer;
+            background-color: #66BF39;
+            font-weight: bold;
+            height: 50px;
+            width: 100%;
+        }
+        .singup-button{
+            border: none;
+            border-radius: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            background-color: var(--boton-registrar);
+            cursor: pointer;
+            font-weight: bold;
+            height: 50px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login">
+        <divc class="form-container">
+            <img src="./imagenes/logaso.PNG" alt="logo" class="logo">
+            <h1 class="title">login or Sing up</h1>
+                <p class="subtitle">enter a new login or sing up </p>
+                <form action="/" class="form">
+                    <label for="Correo" class="label">Correo</label>
+                    <input type="correo" id="correo" placeholder="mail" class="input input-correo"> 
+                   
+                    <label for="password" class="label">Password</label>
+                    <input type="password" id="password" placeholder="**********" class="input input-password"> 
+
+                    <input type="submit" value="registarse" class="login-button">
+                    <input type="submit" value="iniciar sesion" class="singup-button"> 
+                </form>
+                
+        </divc>
+
+    </div>
+</body>
+</html>
