@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,78 +10,504 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
-        body{
+        body {
             font-family: 'Fredoka', sans-serif;
             margin: 0;
         }
-        :root{
+
+        :root {
             --azul-fondo-oscuro: #0542b9;
-            --botom-agregar-iniciar-estadisticas:#26890c;
-            --clase-priebas:#ffa602;
-            --lista_estu-temario-numePreguntas:#33cccc;
-            --circulo:#25076b;
-            --temas:#d9d9d9;
-            --botonoes-canselar-salir:#e24104;
-            --txtsm:300px;
-            --txtlg:400px;
+            --botom-agregar-iniciar-estadisticas: #26890c;
+            --clase-priebas: #ffa602;
+            --lista_estu-temario-numePreguntas: #33cccc;
+            --circulo: #25076b;
+            --temas: #d9d9d9;
+            --botonoes-canselar-salir: #e24104;
+            --txtsm: 300;
+            --txtlg: 400;
         }
-        .pantalla{
+
+        .pantalla {
             background-color: var(--azul-fondo-oscuro);
             width: 100%;
             height: 100vh;
         }
-        .foto-nombre{
-            height: 125px;
+
+        .foto-nombre {
+            display: flex;
+            height: 100px;
             /* quitar */
-            background-color: var(--botom-agregar-iniciar-estadisticas); 
+            background-color: var(--azul-fondo-oscuro);
             /* quitar */
+            align-items: center;
         }
-        .clases{
-            height: 65px;
-            background-color: var(--clase-priebas); 
+
+        .foto-nombre img {
+            margin-top: 22px;
+            width: auto;
+            height: 85px;
+            object-fit: cover;
+            margin-left: 50px;
         }
-        .template{
+
+        .foto-nombre h1 {
+            margin-left: 50px;
+            color: var(--temas);
+            font-size: 45px;
+        }
+
+        .clases {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 17px;
+
+        }
+
+        .clases ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-left: 80px;
+        }
+
+        .clases ul li {
+            width: 180px;
+            height: 45px;
+            background-color: var(--clase-priebas);
+            margin: 0px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 35px;
+        }
+
+        .clases ul li a {
+            text-decoration: none;
+            color: purple;
+            font-weight: 600;
+            font-size: 21px;
+        }
+
+        .template {
             display: flex;
             justify-content: center;
             height: 69vh;
-            background-color: var(--lista_estu-temario-numePreguntas); 
+            background-color: var(--azul-fondo-oscuro);
         }
-        .listaestudiantes{
-            width: 35%;
+
+        .listaestudiantes {
+            width: 30%;
             height: 100%;
-            background-color: var(--temas);
+            background-color: var(--lista_estu-temario-numePreguntas);
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+            font-size: 18px;
+            position: relative;
         }
-        .botonesprincipales{
+
+        .listaestudiantes img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 83%;
+            top: 7%;
+        }
+
+        .titulos-frame {
+            display: flex;
+            justify-content: center;
+        }
+
+        .listaestudiantes ul {
+            list-style: none;
+            padding: 0 30px;
+            margin: 0;
+        }
+
+        .listaestudiantes ul li {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .listaestudiantes ul li p {
+            margin: 2px 8px;
+            font-size: 20px;
+        }
+
+        .listaestudiantes ul li p:nth-child(1) {
+            color: var(--azul-fondo-oscuro);
+            width: 3%;
+        }
+
+        .listaestudiantes ul li p:nth-child(2) {
+            color: purple;
+            width: 80%;
+        }
+
+        .listaestudiantes ul li p:nth-child(3) {
+            color: var(--clase-priebas);
+            width: 14%;
+        }
+
+        .titulos-frame h3 {
+            color: var(--azul-fondo-oscuro);
+            font-size: 26px;
+        }
+
+        .botones-funcion {
             width: 17%;
             height: 100%;
-            background-color:var(--botonoes-canselar-salir);
+            background-color: var(--azul-fondo-oscuro);
         }
-        .elegirtema{
+
+        .botonesprincipales {
+            width: 100%;
+            height: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
+        .botonesprincipales ul {
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .botonesprincipales ul li {
+            margin: 32px;
+            display: flex;
+            justify-content: center;
+            background-color: var(--clase-priebas);
+            padding: 8px 25px;
+            border-radius: 20px;
+        }
+
+        .botonesprincipales ul li a {
+            text-decoration: none;
+            font-size: 21px;
+            color: purple;
+            font-weight: bold;
+        }
+
+        .botones-estudaintes {
+            width: 100%;
+            height: 50%;
+            border: none;
+        }
+
+        .botones-estudaintes ul {
+            width: 45%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: end;
+            flex-direction: column;
+        }
+
+        .botones-estudaintes ul li {
+            margin: 10px 10px 0px;
+            display: flex;
+            justify-content: center;
+            background-color: var(--clase-priebas);
+            padding: 8px 25px;
+            border-radius: 20px;
+        }
+
+        .botones-estudaintes ul li a {
+            text-decoration: none;
+            font-size: 21px;
+            color: purple;
+            font-weight: bold;
+        }
+
+        .elegirtema {
             width: 43%;
-            height: 100%; 
+            height: 100%;
+            background-color: var(--azul-fondo-oscuro);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .temario {
+            width: 100%;
+            height: 75%;
+            background-color: var(--lista_estu-temario-numePreguntas);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .temario h1 {
+            font-size: 26px;
+            color: var(--azul-fondo-oscuro);
+            margin-bottom: 0px;
+        }
+
+        .grilla {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 15px 25px;
+        }
+
+        .item {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .item p {
+            margin: 2px;
+            font-size: 19px;
+            font-weight: 700;
+            color: purple;
+        }
+
+        .preguntas {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .preguntas h3 {
+            font-size: 26px;
+            color: var(--temas);
+            margin: 23px 30px;
+        }
+
+        .preguntas input {
+            margin: 15px 25px;
+            border: none;
+            background-color: var(--lista_estu-temario-numePreguntas);
+            border-radius: 20px;
+        }
+
+        .iniciar-prueba {
+            width: 100%;
+            height: 13%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .iniciar-prueba input{
+            font-size: 25px;
+            border: none;
+            border-radius: 20px;
+            padding: 11px 45px;
+            color: var(--temas);
+            font-weight: 700;
+        }
+        .iniciar-prueba input:nth-child(1){
+            background-color: palevioletred;
+        }
+        .iniciar-prueba input:nth-child(2){
             background-color:var(--botom-agregar-iniciar-estadisticas);
         }
+
+        /* medias */
     </style>
 </head>
+
 <body>
     <div class="pantalla">
         <div class="foto-nombre">
-            
+            <img src="./imagenes/logaso-sin-fonfo-blanco.png" alt="">
+            <h1>Juan David Naranjo</h1>
         </div>
-        <div class="clases">
-
-        </div>
+        <nav class="clases">
+            <ul>
+                <li>
+                    <a href="">Agregar</a>
+                </li>
+                <li>
+                    <a href="">Clase 1</a>
+                </li>
+                <li>
+                    <a href="">Clase 1</a>
+                </li>
+                <li>
+                    <a href="">Clase 1</a>
+                </li>
+                <li>
+                    <a href="">Clase 1</a>
+                </li>
+            </ul>
+        </nav>
         <div class="template">
             <div class="listaestudiantes">
-                a
+                <div class="titulos-frame">
+                    <h3>Lista de estudiantes</h3>
+                </div>
+                <img src="./imagenes/puntaje-encabezado.png" alt="">
+                <ul>
+                    <li>
+                        <p>
+                            1
+                        </p>
+                        <p>
+                            juan naranjo torres
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            2
+                        </p>
+                        <p>
+                            juan naranjo torres
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            3
+                        </p>
+                        <p>
+                            kevin david quintana barbosa
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            4
+                        </p>
+                        <p>
+                            juan naranjo torres
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            5
+                        </p>
+                        <p>
+                            juan naranjo torres
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            6
+                        </p>
+                        <p>
+                            juan naranjo torres
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            7
+                        </p>
+                        <p>
+                            juan naranjo torres
+                        </p>
+                        <p>
+                            1233
+                        </p>
+                    </li>
+                </ul>
             </div>
-            <div class="botonesprincipales">
-                a
+            <div class="botones-funcion">
+                <div class="botonesprincipales">
+                    <ul>
+                        <li>
+                            <a href="">Pruebas</a>
+                        </li>
+                        <li>
+                            <a href="">Estadisticas</a>
+                        </li>
+                        <li>
+                            <a href="">Eliminar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="botones-estudaintes">
+                    <ul>
+                        <li>
+                            <a href="">-</a>
+                        </li>
+                        <li>
+                            <a href="">+</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="elegirtema">
-                a
-            </div>
+            <form class="elegirtema" action="">
+                <div class="temario">
+                    <h1>Temario</h1>
+                    <div class="grilla">
+                        <div class="item">
+                            <img src="./imagenes/vocales.jpg" alt="">
+                            <p>Vocales</p>
+                        </div>
+                        <div class="item">
+                            <img src="./imagenes/vocales.jpg" alt="">
+                            <p>Animales</p>
+                        </div>
+                        <div class="item">
+                            <img src="./imagenes/vocales.jpg" alt="">
+                            <p>Colores</p>
+                        </div>
+                        <div class="item">
+                            <img src="./imagenes/vocales.jpg" alt="">
+                            <p>Partes del cuerpo</p>
+                        </div>
+                        <div class="item">
+                            <img src="./imagenes/vocales.jpg" alt="">
+                            <p>Verbos</p>
+                        </div>
+                        <div class="item">
+                            <img src="./imagenes/vocales.jpg" alt="">
+                            <p>Hora</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="preguntas">
+                    <h3>cantidad de preguntas</h3>
+                    <input type="number" name="" id="">
+                </div>
+                <div class="iniciar-prueba">
+                    <input type="submit" value="Cancelar">
+                    <input type="submit" value="Iniciar">
+                </div>
+            </form>
         </div>
     </div>
 </body>
+
 </html>
