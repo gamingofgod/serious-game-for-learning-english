@@ -7,4 +7,6 @@ Cosas a tener en cuenta:
 1.limitar el numero de clases por porfesor para que no se salgan del margen, pero sobre todo para no saturar la base datos
 2.hacer que la lista tenga un dezlizar con js
 3.hacer que el temario sea deszlisable tambien
-4.
+4.crear el niño, falta vista
+5.falta añadir foother y navbar
+6.falta que se vea exacatemente igual en todas las resoluciones

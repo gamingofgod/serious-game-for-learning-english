@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        :root {
+            --azul-fondo-oscuro: #0542b9;
+            --botom-agregar-iniciar-estadisticas: #26890c;
+            --clase-priebas: #ffa602;
+            --lista_estu-temario-numePreguntas: #E37575;
+            --circulo: #25076b;
+            --temas: #d9d9d9;
+            --botonoes-canselar-salir: #e24104;
+            --txtsm: 300;
+            --txtlg: 400;
+            --pantalla: #864CBF;
+            --letras: #33CCCC;
+            --listestu: #45A3E5;
+        }
+
+        .pantalla {
+            background: var(--pantalla);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fila1 {
+
+            height: 35vh;
+            display: flex;
+        }
+
+        .pregunta {
+            width: 80%;
+            background-color: var(--clase-priebas);
+            display: flex;
+            border-radius: 30px;
+            margin: 16px;
+            align-items: center;
+        }
+
+        .B-flechas {
+            background-color: var(--pantalla);
+            width: 20%;
+        }
+
+        .pregunta-op {
+
+            width: 70%;
+            background-color: var(--pntalla);
+        }
+
+        .imagen {
+            width: 30%;
+            border-radius: 20px;
+            margin: 0px 12px;
+        }
+
+        .imagen img {
+            object-fit: cover;
+            width: 90%;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .p-n {
+
+            display: flex;
+            justify-content: center;
+            padding: 0px;
+            height: 45px;
+            margin-bottom: 12px;
+        }
+
+        .p-n p:nth-child(1) {
+            background-color: var(--lista_estu-temario-numePreguntas);
+            padding: 8px;
+            font-size: 20px;
+            border-radius: 10px;
+            margin: 3px 0 3px 15px;
+        }
+
+        .p-n p:nth-child(2) {
+            background-color: var(--lista_estu-temario-numePreguntas);
+            margin: 3px 0 3px 30px;
+            padding: 8px;
+            font-size: 20px;
+            border-radius: 10px;
+
+        }
+
+        .respuestas {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 35% 35%;
+            justify-content: center;
+            row-gap: 8px;
+        }
+
+        .item {
+            display: flex;
+            justify-self: center;
+            border-radius: 10px;
+            width: 96%;
+            justify-content: center;
+            height: 7.5vh;
+            color: white;
+            font-weight: 600;
+        }
+
+        .item:nth-child(1) {
+            background-color: var(--letras);
+        }
+
+        .item:nth-child(2) {
+            background-color: var(--botom-agregar-iniciar-estadisticas);
+        }
+
+        .item:nth-child(3) {
+            background-color: var(--lista_estu-temario-numePreguntas);
+
+        }
+
+        .item:nth-child(4) {
+            background-color: var(--azul-fondo-oscuro);
+
+        }
+
+        .B-flechas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .B-flechas a {
+            width: 100%;
+        }
+
+        .B-flechas a img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+        }
+
+        .B-flechas a:nth-child(1) {
+            transform: scaleX(-1);
+        }
+
+        .fila2 {
+            display: flex;
+            height: 65vh;
+
+        }
+
+        .estudiantes {
+            background-color: #33CCCC;
+            width: 50%;
+            border-radius: 10px;
+            margin: 20px;
+            display: flex;
+        }
+
+        .respuestas-e {
+            background-color: var(--listestu);
+            width: 30%;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .controles {
+            background-color: var(--azul-fondo-oscuro);
+            width: 20%;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .nombre {
+            background-color: var(--listestu);
+            width: 70%;
+            border-radius: 10px;
+            margin: 5px
+        }
+
+        .nombre h5 {
+
+            margin: 8px 0 0 0;
+        }
+
+        .nombre ul {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            align-items: left;
+            padding-left: 20px;
+            margin-top: 8px;
+
+
+        }
+
+        .nombre ul li {
+            margin-bottom: 3px;
+        }
+
+        .nombre ul li p {
+            margin: 0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .titulo {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .titulo h4 {
+            margin: 12px;
+
+        }
+
+        .codigo {
+            background-color: #E37575;
+            width: 10%;
+            border-radius: 10px;
+            margin: 5px
+        }
+
+        .codigo ul {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .codigo ul li {
+            margin-bottom: 3px;
+        }
+
+        .codigo ul li p {
+            margin: 0;
+            color: white;
+            font-weight: 600;
+
+
+        }
+
+        .puntaje {
+            background-color: var(--clase-priebas);
+            width: 20%;
+            border-radius: 10px;
+            margin: 5px
+        }
+
+        .puntaje ul {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .puntaje ul li {
+            margin-bottom: 3px;
+
+        }
+
+        .puntaje ul li p {
+            margin: 0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .titulo-res {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .titulo-res h4 {
+            margin: 14px;
+        }
+
+        .respuestas-e ul {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .respuestas-e ul li {
+            margin-bottom: 3px;
+        }
+
+        .respuesta-nino ul li {
+            display: flex;
+            width: 100%;
+        }
+
+        .itemR {
+            width: 50%;
+            background-color: var(--botonoes-canselar-salir);
+            border-radius: 5px;
+            margin: 0 12px;
+        }
+
+        .itemR:nth-child(1) {
+            background-color: var(--letras);
+
+        }
+
+        .itemR:nth-child(2) {
+            background-color: var(--botom-agregar-iniciar-estadisticas);
+
+        }
+
+        .itemR:nth-child(3) {
+            background-color: var(--lista_estu-temario-numePreguntas);
+        }
+
+        .itemR:nth-child(4) {
+            background-color: var(--azul-fondo-oscuro);
+        }
+
+        .controles {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .codigo-sala {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .codigo-sala P:nth-child(1) {
+            color: white;
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .codigo-sala P:nth-child(2) {
+            color: white;
+            font-weight: 800;
+            font-size: 30px;
+        }
+
+        .cancelar-prueba-button {
+            border: none;
+            border-radius: 30px;
+            padding: 6px;
+            background-color: var(--lista_estu-temario-numePreguntas);
+            cursor: pointer;
+            font-weight: bold;
+            height: 50px;
+            width: 80%;
+            color: white;
+        }
+
+        .terminar-prueba-button {
+            border: none;
+            border-radius: 30px;
+            padding: 6px;
+            background-color: var(--botom-agregar-iniciar-estadisticas);
+            cursor: pointer;
+            font-weight: bold;
+            height: 50px;
+            width: 80%;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pantalla">
+        <div class="fila1">
+            <div class="pregunta">
+                <div class="pregunta-op">
+
+                    <div class="p-n">
+                        <p>
+                            ¿Cuáles son los tipos de preguntas del inglés?
+                        </p>
+                        <p>
+                            #P
+                        </p>
+
+                    </div>
+                    <div class="respuestas">
+                        <div class="item 1a">
+                            <p>
+                                respuesta uno
+                            </p>
+
+                        </div>
+                        <div class="item 2a">
+                            <p>
+                                respuesta dos
+                            </p>
+
+                        </div>
+                        <div class="item 3a">
+                            <p>
+                                respuesta tres
+                            </p>
+
+                        </div>
+                        <div class="item 4a">
+                            <p>
+                                respuesta cuatro
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="imagen">
+                    <img src="./imagenes/logaso.PNG" alt="">
+
+                </div>
+
+            </div>
+            <div class="B-flechas">
+
+                <a href="">
+                    <img src="./imagenes/icons8-arrow-78.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./imagenes/icons8-arrow-78.png" alt="">
+                </a>
+
+            </div>
+        </div>
+        <div class="fila2">
+            <div class="estudiantes">
+                <div class="codigo">
+                    <div class="titulo">
+                        <h4>
+                            No.
+                        </h4>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <p>
+                                1
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                2
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                3
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                4
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                5
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                6
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                7
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nombre">
+                    <div class="titulo">
+                        <h4>
+                            lista de estudiantes
+                        </h4>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                juan naranjo torres
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="puntaje">
+                    <div class="titulo">
+                        <h4>
+                            Puntaje
+                        </h4>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                1233
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="respuestas-e">
+                <div class="titulo-res">
+                    <h4>
+                        Respuestas
+                    </h4>
+                </div>
+                <div class="respuesta-nino">
+                    <ul>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+                        <li>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR"></div>
+                            <div class="itemR">.</div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="controles">
+                <div class="codigo-sala">
+                    <p>codigo:</p>
+                    <p>KJVFI-2155</p>
+                </div>
+                <input type="submit" value="Terminar prueba" class="terminar-prueba-button">
+
+                <input type="submit" value="Cancelar prueba" class="cancelar-prueba-button">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
