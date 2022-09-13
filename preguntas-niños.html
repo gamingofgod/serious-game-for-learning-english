@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        body {
+            font-family: 'Fredoka', sans-serif;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        :root {
+            --azul-fondo-oscuro: #0542b9;
+            --botom-agregar-iniciar-estadisticas: #26890c;
+            --clase-priebas: #ffa602;
+            --lista_estu-temario-numePreguntas: #E37575;
+            --circulo: #25076b;
+            --temas: #d9d9d9;
+            --botonoes-canselar-salir: #e24104;
+            --txtsm: 300;
+            --txtlg: 400;
+            --pantalla: #46178F;
+            --letras: #33CCCC;
+            --listestu: #1368CE;
+        }
+        .pantalla {
+            background: var(--pantalla);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fila1 {
+
+            height: 15vh;
+            display: flex;
+            background: var(--pantalla);
+        }
+
+        .pregunta{
+            width: 90%;
+            background-color: var(--clase-priebas);
+            display: flex;
+            border-radius: 30px;
+            margin: 20px;
+            align-items: center;
+        }
+        .pregunta p{
+            display: flex;
+            justify-content: center;
+            
+            padding: 8px;
+            font-size: 20px;
+            border-radius: 10px;
+            margin: 3px 0 3px 15px;
+           
+        }
+          .fila2{
+            height: 50vh;
+            display: flex;
+            background: var(--pantalla);
+
+        }
+        .imagen{
+            width: 90%;
+            background-color: var(--azul-fondo-oscuro);
+            display: flex;
+            border-radius: 5px;
+            margin: 20px;
+            align-items: center;
+        }
+        
+        .fila3{
+            height: 35vh;
+            display: flex;
+            background: #FFDD33;
+            
+        }
+        .respuestas {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 35% 35%;
+            justify-content: center;
+            row-gap: 8px;
+        }
+        .item {
+            display: flex;
+            justify-self: center;
+            border-radius: 10px;
+            width: 96%;
+            justify-content: center;
+            height: 7.5vh;
+            color: white;
+            font-weight: 600;
+        }
+
+        .item:nth-child(1) {
+            background-color: var(--botonoes-canselar-salir);
+        }
+
+        .item:nth-child(2) {
+            background-color: var(--listestu);
+        }
+
+        .item:nth-child(3) {
+            background-color: var(--botom-agregar-iniciar-estadisticas);
+
+        }
+
+        .item:nth-child(4) {
+            background-color: var(--letras);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="pantalla">
+        <div class="fila1">
+            <div class="pregunta">
+                <p>
+                    pegunta para el estudiantes
+                </p>
+            </div>
+            
+        </div>
+        <div class="fila2">
+
+            <div class="imagen">
+                <img src="./imagenes/logaso-sin-fonfo-blanco.png" alt="">
+                
+            </div>
+        </div>
+        <div class="fila3">
+            <div class="respuestas">
+                <div class="item">
+                    <p>
+                        respuesta uno
+                    </p>
+
+                </div>
+                <div class="item">
+                    <p>
+                        respuesta dos
+                    </p>
+
+                </div>
+                <div class="item">
+                    <p>
+                        respuesta tres
+                    </p>
+
+                </div>
+                <div class="item">
+                    <p>
+                        respuesta cuatro
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
