@@ -1,0 +1,107 @@
+CREATE DATABASE ultimate_english;
+USE ultimate_english;
+
+-- CREATE TABLE tipos(
+-- tipo_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- tipo_nombre VARCHAR (40)
+-- );
+-- 
+-- CREATE TABLE docentes(
+-- docente_id INT NOT NULL PRIMARY key AUTO_INCREMENT,
+-- docente_nombre VARCHAR(40),
+-- docente_mail VARCHAR (40),
+-- docente_contraseña VARCHAR (40),
+-- docente_foto VARCHAR (40),
+-- docente_sex VARCHAR (40), 
+-- docente_estado VARCHAR (40)
+-- );
+
+-- CREATE TABLE temarios(
+-- temario_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- temario_nombre VARCHAR (40)
+-- );
+
+-- CREATE TABLE preguntas(
+-- pregunta_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+-- 
+-- temario_id INT NOT  NULL,
+-- FOREIGN KEY (temario_id) REFERENCES temarios(temario_id),
+-- 
+-- tipo_id INT NOT NULL,
+-- FOREIGN KEY (tipo_id) REFERENCES tipos(tipo_id),
+-- pregunta_imagen VARCHAR (40),
+-- pregunta_pregunta VARCHAR (40),
+-- pregunta_respuesta VARCHAR (40),
+-- pregunta_op1 VARCHAR (40),
+-- pregunta_op2 VARCHAR (40),
+-- pregunta_op3 VARCHAR (40)
+-- );
+-- 
+-- CREATE TABLE clases(
+-- clase_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- docente_id INT NOT NULL,
+-- FOREIGN KEY (docente_id) REFERENCES docentes(docente_id),
+-- clase_nombre VARCHAR (40),
+-- clase_pptp VARCHAR (40)
+-- );
+
+-- create table estudiantes(
+-- estudiante_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- clase_id INT NOT NULL,
+-- FOREIGN KEY (clase_id) REFERENCES clases(clase_id),
+-- estudiante_nombre VARCHAR(40),
+-- estudiante_ppp INT ,
+-- estudiante_codigo INT
+-- );
+-- 
+-- CREATE TABLE pruebas(
+-- prueba_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- clase_id INT NOT NULL,
+-- FOREIGN KEY (clase_id) REFERENCES clases(clase_id),
+-- prueba_np INT,
+-- prueba_fecha DATE,
+-- prueba_pps INT ,
+-- temario_id INT NOT NULL,
+-- FOREIGN KEY (temario_id) REFERENCES temarios(temario_id)
+-- );
+-- 
+-- CREATE TABLE calificacionpruebas(
+-- calificacionprueba_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- prueba_id INT NOT NULL,
+-- FOREIGN KEY (prueba_id) REFERENCES pruebas(prueba_id),
+-- estudiante_id INT NOT NULL,
+-- FOREIGN KEY (estudiante_id) REFERENCES estudiantes(estudiante_id),
+-- calificacionprueba_pp INT
+-- );
+
+-- CREATE TABLE estadisticaestudiantes(
+-- estadisticaestudiante_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- prueba_id INT NOT NULL,
+-- FOREIGN KEY (prueba_id) REFERENCES pruebas(prueba_id),
+-- estudiante_id INT NOT NULL, 
+-- FOREIGN KEY (estudiante_id) REFERENCES estudiantes(estudiante_id),
+-- estadisticaestudiante_fechaprueba DATE,
+-- estadisticaestudiante_promedioprueba INT
+-- 
+-- );
+-- 
+-- CREATE TABLE pruebasxpreguntas(
+-- prueba_id INT NOT NULL,
+-- FOREIGN KEY (prueba_id) REFERENCES pruebas(prueba_id),
+-- 
+-- pregunta_id INT NOT NULL,
+-- FOREIGN KEY (pregunta_id) REFERENCES preguntas(pregunta_id),
+-- 
+-- pruebasxpregunta_id int NOT NULL PRIMARY KEY AUTO_INCREMENT
+-- 
+-- );
+-- 
+-- CREATE TABLE estadisticaclases(
+-- estadisticaclase_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+-- clase_id INT NOT NULL,
+-- FOREIGN KEY (clase_id) REFERENCES clases(clase_id),
+-- prueba_id INT NOT NULL,
+-- FOREIGN KEY (prueba_id) REFERENCES pruebas(prueba_id),
+-- estadisticaclase_ppc INT,
+-- estadisticaclase_fechaprueba DATE
+-- );
